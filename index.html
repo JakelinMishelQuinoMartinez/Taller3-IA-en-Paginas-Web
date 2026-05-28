@@ -3,343 +3,634 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduTrack - Cursos de Tecnología en Colombia</title>
+    <title>EduTrack | Cursos de Tecnología Online para Impulsar tu Carrera</title>
+
+    <meta
+        name="description"
+        content="Impulsa tu carrera tech con cursos online diseñados para el mercado profesional colombiano. Aprende desarrollo web, backend, IA y más con EduTrack."
+    >
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-    <header class="main-header">
+    <header class="site-header">
         <nav class="navbar">
-            <div class="logo">Edu<span>Track</span></div>
-            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir menú">☰</button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#courses">Cursos</a></li>
-                <li><a href="#stats">Impacto</a></li>
-                <li><a href="#testimonials">Testimonios</a></li>
-                <li><a href="#register">Registro</a></li>
-                <li><a href="#dashboard-section" class="btn-nav">Ir al Panel</a></li>
-            </ul>
+            <div class="container navbar-container">
+
+                <a href="#hero" class="logo">
+                    EduTrack
+                </a>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#courses" class="nav-link">Cursos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#stats" class="nav-link">Resultados</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#testimonials" class="nav-link">Testimonios</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#register" class="nav-link">Registro</a>
+                    </li>
+                </ul>
+
+                <a href="#register" class="btn-primary nav-cta">
+                    Comienza Hoy
+                </a>
+
+            </div>
         </nav>
     </header>
 
     <main>
+
+        <!-- HERO SECTION -->
         <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h1>Impulsa tu Carrera Tech en Colombia</h1>
-                <p>Aprende las habilidades más demandadas con mentores expertos. Programación, Datos y UI/UX con enfoque práctico.</p>
-                <a href="#register" class="btn-primary">Comienza Ahora</a>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600" alt="Estudiante EdTech">
+            <div class="container hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        Formación tech enfocada en empleabilidad
+                    </span>
+
+                    <h1 class="hero-title">
+                        Impulsa tu carrera tech con cursos diseñados para el mercado colombiano.
+                    </h1>
+
+                    <p class="hero-description">
+                        Aprende desarrollo web, backend, herramientas modernas y habilidades digitales
+                        demandadas por empresas tecnológicas reales. Avanza con proyectos prácticos,
+                        contenido actualizado y una comunidad enfocada en crecimiento profesional.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#register" class="btn-primary">
+                            Quiero Registrarme
+                        </a>
+
+                        <a href="#courses" class="btn-secondary">
+                            Ver Cursos
+                        </a>
+                    </div>
+
+                    <div class="hero-features">
+
+                        <div class="hero-feature-item">
+                            <span class="feature-highlight">+1.200</span>
+                            <span class="feature-text">Estudiantes activos</span>
+                        </div>
+
+                        <div class="hero-feature-item">
+                            <span class="feature-highlight">98%</span>
+                            <span class="feature-text">Satisfacción estudiantil</span>
+                        </div>
+
+                        <div class="hero-feature-item">
+                            <span class="feature-highlight">40</span>
+                            <span class="feature-text">Cursos especializados</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <img
+                        src="https://placehold.co/600x500"
+                        alt="Plataforma educativa EduTrack"
+                        class="hero-image"
+                    >
+
+                </div>
+
             </div>
         </section>
 
+        <!-- COURSES SECTION -->
         <section id="courses" class="courses-section">
-            <h2>Nuestros Cursos Destacados</h2>
-            <div class="courses-grid">
-                <div class="course-card">
-                    <h3>JavaScript Avanzado</h3>
-                    <p>Domina el lenguaje de la web moderna, closures, asincronismo y ES6+.</p>
-                    <span class="badge badge-tech">Desarrollo</span>
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Cursos destacados
+                    </span>
+
+                    <h2 class="section-title">
+                        Aprende tecnologías modernas con enfoque profesional.
+                    </h2>
+
+                    <p class="section-description">
+                        Diseñamos rutas de aprendizaje enfocadas en las habilidades
+                        que hoy buscan las empresas tecnológicas en Colombia y Latinoamérica.
+                    </p>
+
                 </div>
-                <div class="course-card">
-                    <h3>React desde Cero</h3>
-                    <p>Construye interfaces de usuario interactivas y declarativas de forma eficiente.</p>
-                    <span class="badge badge-tech">Frontend</span>
+
+                <div class="courses-grid">
+
+                    <article class="course-card">
+
+                        <span class="course-badge">
+                            Popular
+                        </span>
+
+                        <h3 class="course-title">
+                            Full Stack Web Development
+                        </h3>
+
+                        <p class="course-description">
+                            Domina HTML, CSS, JavaScript y herramientas modernas para construir
+                            aplicaciones web profesionales desde cero.
+                        </p>
+
+                        <div class="course-meta">
+                            <span class="course-duration">
+                                12 semanas
+                            </span>
+
+                            <span class="course-level">
+                                Junior - Mid
+                            </span>
+                        </div>
+
+                    </article>
+
+                    <article class="course-card">
+
+                        <span class="course-badge">
+                            Nuevo
+                        </span>
+
+                        <h3 class="course-title">
+                            React Profesional
+                        </h3>
+
+                        <p class="course-description">
+                            Construye interfaces modernas y escalables utilizando React,
+                            componentes reutilizables y buenas prácticas frontend.
+                        </p>
+
+                        <div class="course-meta">
+                            <span class="course-duration">
+                                8 semanas
+                            </span>
+
+                            <span class="course-level">
+                                Intermedio
+                            </span>
+                        </div>
+
+                    </article>
+
+                    <article class="course-card">
+
+                        <span class="course-badge">
+                            Top Rated
+                        </span>
+
+                        <h3 class="course-title">
+                            Backend con Node.js
+                        </h3>
+
+                        <p class="course-description">
+                            Aprende APIs REST, autenticación, bases de datos y arquitectura backend
+                            moderna usando Node.js y Express.
+                        </p>
+
+                        <div class="course-meta">
+                            <span class="course-duration">
+                                10 semanas
+                            </span>
+
+                            <span class="course-level">
+                                Intermedio
+                            </span>
+                        </div>
+
+                    </article>
+
+                    <article class="course-card">
+
+                        <span class="course-badge">
+                            Tendencia
+                        </span>
+
+                        <h3 class="course-title">
+                            IA para Developers
+                        </h3>
+
+                        <p class="course-description">
+                            Integra herramientas de inteligencia artificial en proyectos reales y
+                            aprende los fundamentos de automatización moderna.
+                        </p>
+
+                        <div class="course-meta">
+                            <span class="course-duration">
+                                6 semanas
+                            </span>
+
+                            <span class="course-level">
+                                Todos los niveles
+                            </span>
+                        </div>
+
+                    </article>
+
+                    <article class="course-card">
+
+                        <span class="course-badge">
+                            Career Path
+                        </span>
+
+                        <h3 class="course-title">
+                            DevOps Fundamentals
+                        </h3>
+
+                        <p class="course-description">
+                            Descubre pipelines, automatización, despliegues y herramientas cloud
+                            esenciales para equipos modernos.
+                        </p>
+
+                        <div class="course-meta">
+                            <span class="course-duration">
+                                9 semanas
+                            </span>
+
+                            <span class="course-level">
+                                Mid Level
+                            </span>
+                        </div>
+
+                    </article>
+
+                    <article class="course-card">
+
+                        <span class="course-badge">
+                            Data
+                        </span>
+
+                        <h3 class="course-title">
+                            SQL & Data Analytics
+                        </h3>
+
+                        <p class="course-description">
+                            Aprende consultas SQL, análisis de datos y visualización para tomar
+                            decisiones basadas en información real.
+                        </p>
+
+                        <div class="course-meta">
+                            <span class="course-duration">
+                                7 semanas
+                            </span>
+
+                            <span class="course-level">
+                                Junior
+                            </span>
+                        </div>
+
+                    </article>
+
                 </div>
-                <div class="course-card">
-                    <h3>Python para Datos</h3>
-                    <p>Introduce las bases de la ciencia de datos y análisis de información estructurada.</p>
-                    <span class="badge badge-tech">Data Science</span>
-                </div>
+
             </div>
         </section>
 
+        <!-- STATS SECTION -->
         <section id="stats" class="stats-section">
-            <div class="stat-item">
-                <span class="stat-number">1,200+</span>
-                <span class="stat-label">Estudiantes Activos</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">40+</span>
-                <span class="stat-label">Cursos Especializados</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">98%</span>
-                <span class="stat-label">Satisfacción Laboral</span>
+            <div class="container">
+
+                <div class="stats-grid">
+
+                    <article class="stat-card">
+                        <h3 class="stat-number">
+                            1.200+
+                        </h3>
+
+                        <p class="stat-text">
+                            Estudiantes aprendiendo habilidades tecnológicas de alto impacto.
+                        </p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3 class="stat-number">
+                            98%
+                        </h3>
+
+                        <p class="stat-text">
+                            Nivel de satisfacción entre estudiantes y profesionales graduados.
+                        </p>
+                    </article>
+
+                    <article class="stat-card">
+                        <h3 class="stat-number">
+                            40
+                        </h3>
+
+                        <p class="stat-text">
+                            Cursos actualizados con tecnologías modernas y enfoque laboral.
+                        </p>
+                    </article>
+
+                </div>
+
             </div>
         </section>
 
+        <!-- TESTIMONIALS SECTION -->
         <section id="testimonials" class="testimonials-section">
-            <h2>Lo que dicen nuestros estudiantes</h2>
-            <div class="testimonials-grid">
-                <blockquote>
-                    <p>"Gracias a EduTrack pasé de soporte técnico a Desarrollador Junior en Bogotá en solo 6 meses."</p>
-                    <cite>- Carlos Mendoza</cite>
-                </blockquote>
-                <blockquote>
-                    <p>"La comunidad y el contenido enfocado al mercado colombiano marcan totalmente la diferencia."</p>
-                    <cite>- Diana Rincón</cite>
-                </blockquote>
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Historias reales
+                    </span>
+
+                    <h2 class="section-title">
+                        Desarrolladores que aceleraron su crecimiento profesional.
+                    </h2>
+
+                    <p class="section-description">
+                        Miles de estudiantes ya están fortaleciendo sus habilidades y
+                        mejorando sus oportunidades laborales con EduTrack.
+                    </p>
+
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <article class="testimonial-card">
+
+                        <img
+                            src="https://placehold.co/100x100"
+                            alt="Avatar de estudiante"
+                            class="testimonial-avatar"
+                        >
+
+                        <p class="testimonial-text">
+                            “Gracias a EduTrack conseguí estructurar mejor mi perfil frontend
+                            y finalmente pude aplicar a posiciones remotas con más confianza.”
+                        </p>
+
+                        <div class="testimonial-author">
+                            <h3 class="author-name">
+                                Laura Gómez
+                            </h3>
+
+                            <span class="author-role">
+                                Frontend Developer
+                            </span>
+                        </div>
+
+                    </article>
+
+                    <article class="testimonial-card">
+
+                        <img
+                            src="https://placehold.co/100x100"
+                            alt="Avatar de estudiante"
+                            class="testimonial-avatar"
+                        >
+
+                        <p class="testimonial-text">
+                            “Los proyectos prácticos y el enfoque profesional me ayudaron a
+                            entender cómo trabajan realmente los equipos de tecnología.”
+                        </p>
+
+                        <div class="testimonial-author">
+                            <h3 class="author-name">
+                                Sebastián Torres
+                            </h3>
+
+                            <span class="author-role">
+                                Backend Developer
+                            </span>
+                        </div>
+
+                    </article>
+
+                    <article class="testimonial-card">
+
+                        <img
+                            src="https://placehold.co/100x100"
+                            alt="Avatar de estudiante"
+                            class="testimonial-avatar"
+                        >
+
+                        <p class="testimonial-text">
+                            “Pasé de sentirme perdido en programación a construir proyectos
+                            completos con herramientas modernas y buenas prácticas.”
+                        </p>
+
+                        <div class="testimonial-author">
+                            <h3 class="author-name">
+                                Camila Rodríguez
+                            </h3>
+
+                            <span class="author-role">
+                                Full Stack Developer
+                            </span>
+                        </div>
+
+                    </article>
+
+                </div>
+
             </div>
         </section>
 
+        <!-- REGISTER SECTION -->
         <section id="register" class="register-section">
-            <div class="register-container">
-                <h2>Únete a la próxima cohorte</h2>
-                <p>Completa tus datos y un asesor te contactará con los planes de becas disponibles.</p>
-                <form id="landing-form" onsubmit="event.preventDefault(); alert('¡Pre-registro exitoso!');">
+            <div class="container register-container">
+
+                <div class="register-content">
+
+                    <span class="section-label">
+                        Da el siguiente paso
+                    </span>
+
+                    <h2 class="section-title">
+                        Regístrate y comienza a impulsar tu carrera en tecnología.
+                    </h2>
+
+                    <p class="register-description">
+                        Únete a más de 1.200 estudiantes que ya están desarrollando
+                        habilidades digitales para acceder a mejores oportunidades laborales.
+                    </p>
+
+                </div>
+
+                <form class="register-form">
+
                     <div class="form-group">
-                        <label for="land-name">Nombre Completo</label>
-                        <input type="text" id="land-name" required placeholder="Ej. Ana Martínez">
+                        <label for="name" class="form-label">
+                            Nombre completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-input"
+                            placeholder="Tu nombre"
+                            required
+                        >
                     </div>
+
                     <div class="form-group">
-                        <label for="land-email">Correo Electrónico</label>
-                        <input type="email" id="land-email" required placeholder="Ej. ana@gmail.com">
+                        <label for="email" class="form-label">
+                            Correo electrónico
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="correo@ejemplo.com"
+                            required
+                        >
                     </div>
-                    <button type="submit" class="btn-submit">Solicitar Información</button>
+
+                    <button type="submit" class="btn-primary form-button">
+                        Reservar Mi Cupo
+                    </button>
+
                 </form>
+
             </div>
         </section>
 
-        <hr class="section-divider">
-
-        <section id="dashboard-section" class="dashboard-wrapper">
-            <aside class="sidebar" id="sidebar">
-                <div class="sidebar-header">
-                    <div class="logo">Edu<span>Track</span> Panel</div>
-                </div>
-                <nav class="sidebar-nav">
-                    <ul>
-                        <li><a href="#dashboard-section" class="active">🏠 Inicio</a></li>
-                        <li><a href="#crud-section">👥 Gestión Estudiantes</a></li>
-                        <li><a href="#courses">📚 Mis Cursos</a></li>
-                        <li><a href="#stats">📊 Reportes</a></li>
-                    </ul>
-                </nav>
-                <div class="sidebar-footer">
-                    <div class="user-avatar">🧑‍💻</div>
-                    <div class="user-info">
-                        <p class="user-name">Admin EduTrack</p>
-                        <button class="btn-logout" onclick="alert('Sesión cerrada simbólicamente')">Cerrar Sesión</button>
-                    </div>
-                </div>
-            </aside>
-
-            <div class="dashboard-content">
-                <header class="dashboard-topbar">
-                    <button class="hamburger-btn" id="sidebar-toggle">☰</button>
-                    <h2>Dashboard de Control Estudiantil</h2>
-                </header>
-
-                <div class="kpi-grid">
-                    <div class="kpi-card">
-                        <div class="kpi-icon">📚</div>
-                        <div class="kpi-data">
-                            <h3>Cursos Activos</h3>
-                            <p class="kpi-value" id="kpi-cursos-activos">5</p>
-                            <span class="kpi-trend positive">+12% vs mes anterior</span>
-                        </div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-icon">📈</div>
-                        <div class="kpi-data">
-                            <h3>Progreso Promedio</h3>
-                            <p class="kpi-value" id="kpi-progreso-promedio">68%</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar-fill" id="kpi-progress-bar" style="width: 68%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="kpi-card">
-                        <div class="kpi-icon">🇨🇴</div>
-                        <div class="kpi-data">
-                            <h3>Próximo Vencimiento</h3>
-                            <p class="kpi-value" id="kpi-vencimiento">$236.000 COP</p>
-                            <span class="kpi-trend">Suscripción Estándar</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <h3>Mis Cursos Matriculados (Vista Global)</h3>
-                    <table class="responsive-table">
-                        <thead>
-                            <tr>
-                                <th>Curso</th>
-                                <th class="hide-mobile">Instructor</th>
-                                <th>Progreso</th>
-                                <th class="hide-mobile">Fecha Inicio</th>
-                                <th>Precio COP</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>JavaScript Avanzado</strong></td>
-                                <td class="hide-mobile">Alejandro Gómez</td>
-                                <td>78%</td>
-                                <td class="hide-mobile">2024-02-10</td>
-                                <td>$396,000</td>
-                                <td><span class="status-badge azul">En progreso</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>React desde Cero</strong></td>
-                                <td class="hide-mobile">Laura Restrepo</td>
-                                <td>45%</td>
-                                <td class="hide-mobile">2024-05-22</td>
-                                <td>$236,000</td>
-                                <td><span class="status-badge azul">En progreso</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Python para Datos</strong></td>
-                                <td class="hide-mobile">Mateo Urrego</td>
-                                <td>100%</td>
-                                <td class="hide-mobile">2023-11-03</td>
-                                <td>$116,000</td>
-                                <td><span class="status-badge verde">Completado</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Node.js con Express</strong></td>
-                                <td class="hide-mobile">Carlos Pérez</td>
-                                <td>12%</td>
-                                <td class="hide-mobile">2024-04-15</td>
-                                <td>$236,000</td>
-                                <td><span class="status-badge azul">En progreso</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>CSS Moderno</strong></td>
-                                <td class="hide-mobile">Beatriz Pinzón</td>
-                                <td>0%</td>
-                                <td class="hide-mobile">2024-05-01</td>
-                                <td>$116,000</td>
-                                <td><span class="status-badge amarillo">Pausado</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <section id="crud-section" class="crud-management">
-                    <div class="crud-header">
-                        <h3>Filtros y Control de Estudiantes Matriculados</h3>
-                        <button class="btn-primary" id="btn-add-student">➕ Agregar Estudiante</button>
-                    </div>
-
-                    <div class="filter-bar">
-                        <input type="text" id="search-input" placeholder="🔍 Buscar por nombre o email...">
-                        
-                        <select id="filter-city">
-                            <option value="">Todas las ciudades</option>
-                            <option value="Bogotá">Bogotá</option>
-                            <option value="Medellín">Medellín</option>
-                            <option value="Cali">Cali</option>
-                            <option value="Barranquilla">Barranquilla</option>
-                            <option value="Cartagena">Cartagena</option>
-                        </select>
-
-                        <select id="filter-plan">
-                            <option value="">Todos los planes</option>
-                            <option value="básico">Básico ($29)</option>
-                            <option value="estándar">Estándar ($59)</option>
-                            <option value="premium">Premium ($99)</option>
-                        </select>
-                    </div>
-
-                    <div class="chart-container">
-                        <canvas id="cityChart"></canvas>
-                    </div>
-
-                    <div class="student-grid" id="student-cards-container">
-                        </div>
-                </section>
-            </div>
-        </section>
     </main>
 
-    <div class="modal" id="student-modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-modal-btn">&times;</span>
-            <h3 id="modal-title">Agregar Nuevo Estudiante</h3>
-            <form id="student-form">
-                <input type="hidden" id="student-id">
-                
-                <div class="form-group">
-                    <label for="form-name">Nombre Completo</label>
-                    <input type="text" id="form-name" required minlength="2" maxlength="60">
-                </div>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-container">
 
-                <div class="form-group">
-                    <label for="form-email">Correo Electrónico</label>
-                    <input type="email" id="form-email" required>
-                </div>
+            <div class="footer-brand">
 
-                <div class="form-group">
-                    <label for="form-city">Ciudad</label>
-                    <select id="form-city" required>
-                        <option value="Bogotá">Bogotá</option>
-                        <option value="Medellín">Medellín</option>
-                        <option value="Cali">Cali</option>
-                        <option value="Barranquilla">Barranquilla</option>
-                        <option value="Cartagena">Cartagena</option>
-                    </select>
-                </div>
+                <a href="#hero" class="footer-logo">
+                    EduTrack
+                </a>
 
-                <div class="form-group">
-                    <label for="form-course">Curso Matriculado</label>
-                    <select id="form-course" required>
-                        <option value="JavaScript Avanzado">JavaScript Avanzado</option>
-                        <option value="React desde cero">React desde cero</option>
-                        <option value="Node.js con Express">Node.js con Express</option>
-                        <option value="Python para datos">Python para datos</option>
-                        <option value="CSS Moderno">CSS Moderno</option>
-                        <option value="SQL para devs">SQL para devs</option>
-                        <option value="Git & GitHub">Git & GitHub</option>
-                        <option value="TypeScript esencial">TypeScript esencial</option>
-                        <option value="Docker básico">Docker básico</option>
-                        <option value="Figma para devs">Figma para devs</option>
-                    </select>
-                </div>
+                <p class="footer-description">
+                    Formación tecnológica online diseñada para impulsar el crecimiento
+                    profesional de desarrolladores en Colombia.
+                </p>
 
-                <div class="form-group">
-                    <label for="form-progress">Progreso (%)</label>
-                    <input type="number" id="form-progress" min="0" max="100" required>
-                </div>
+            </div>
 
-                <div class="form-group">
-                    <label for="form-date">Fecha de Inscripción</label>
-                    <input type="date" id="form-date" min="2023-01-01" max="2025-12-31" required>
-                </div>
+            <div class="footer-links">
 
-                <div class="form-group">
-                    <label for="form-plan">Plan</label>
-                    <select id="form-plan" required>
-                        <option value="básico">Básico</option>
-                        <option value="estándar">Estándar</option>
-                        <option value="premium">Premium</option>
-                    </select>
-                </div>
+                <h3 class="footer-title">
+                    Navegación
+                </h3>
 
-                <div class="form-group-checkbox">
-                    <input type="checkbox" id="form-active" checked>
-                    <label for="form-active">Estudiante Activo</label>
-                </div>
+                <ul class="footer-menu">
 
-                <button type="submit" class="btn-submit" id="btn-save-student">Guardar Cambios</button>
-            </form>
+                    <li>
+                        <a href="#courses" class="footer-link">
+                            Cursos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#stats" class="footer-link">
+                            Resultados
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#testimonials" class="footer-link">
+                            Testimonios
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#register" class="footer-link">
+                            Registro
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-social">
+
+                <h3 class="footer-title">
+                    Redes Sociales
+                </h3>
+
+                <ul class="social-links">
+
+                    <li>
+                        <a href="#" class="social-link">
+                            LinkedIn
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            Instagram
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            YouTube
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
-    </div>
 
-    <a href="https://wa.me/573000000000" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contacto WhatsApp">💬</a>
-
-    <footer class="main-footer">
-        <p>&copy; 2026 EduTrack. Hecho con orgullo en Colombia para Latinoamérica.</p>
+        <div class="footer-bottom">
+            <p class="footer-copy">
+                © 2026 EduTrack. Todos los derechos reservados.
+            </p>
+        </div>
     </footer>
 
-    <script src="app.js"></script>
+    <!-- WHATSAPP FLOAT BUTTON -->
+    <a
+        href="https://wa.me/573001234567"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+    >
+        WhatsApp
+    </a>
+
+    <script src="welcome.js"></script>
+
 </body>
 </html>
