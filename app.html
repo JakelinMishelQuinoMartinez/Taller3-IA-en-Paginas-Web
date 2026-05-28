@@ -1,1 +1,197 @@
-<!.-- -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes | EduTrack</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+    
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <link rel="stylesheet" href="app-styles.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="container header-content">
+            <h1 class="app-title">EduTrack - Gestión de Estudiantes</h1>
+            <a href="index.html" class="btn-back">← Volver a Landing</a>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <div class="container">
+
+            <!-- SECCIÓN DE CONTROLES -->
+            <section class="controls-section">
+                <div class="controls-header">
+                    <h2>Gestión de Estudiantes</h2>
+                    <button id="btnAgregar" class="btn-primary">+ Agregar Estudiante</button>
+                </div>
+
+                <!-- BÚSQUEDA Y FILTROS -->
+                <div class="filters-box">
+                    <div class="search-input">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="🔍 Buscar por nombre o email..."
+                            class="form-control"
+                        >
+                    </div>
+
+                    <select id="ciudadFilter" class="form-control">
+                        <option value="">Todas las ciudades</option>
+                        <option value="Bogotá">Bogotá</option>
+                        <option value="Medellín">Medellín</option>
+                        <option value="Cali">Cali</option>
+                        <option value="Barranquilla">Barranquilla</option>
+                        <option value="Cartagena">Cartagena</option>
+                    </select>
+
+                    <select id="planFilter" class="form-control">
+                        <option value="">Todos los planes</option>
+                        <option value="básico">Básico</option>
+                        <option value="estándar">Estándar</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE ESTUDIANTES (GRID DE CARDS) -->
+            <section class="students-section">
+                <div id="estudiantesContainer" class="students-grid">
+                    <div class="loading">Cargando estudiantes...</div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN DE GRÁFICO -->
+            <section class="chart-section">
+                <h2>Distribución de Estudiantes por Ciudad</h2>
+                <div class="chart-container">
+                    <canvas id="cityChart"></canvas>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- MODAL DE FORMULARIO -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div id="modal" class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Nuevo Estudiante</h2>
+                <button id="btnCerrarModal" class="btn-close">&times;</button>
+            </div>
+
+            <form id="estudianteForm" class="modal-form">
+
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo *</label>
+                    <input 
+                        type="text" 
+                        id="nombre" 
+                        class="form-control" 
+                        placeholder="Ej: Ana Martínez"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        class="form-control" 
+                        placeholder="Ej: ana@ejemplo.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad *</label>
+                        <select id="ciudad" class="form-control" required>
+                            <option value="">Selecciona una ciudad</option>
+                            <option value="Bogotá">Bogotá</option>
+                            <option value="Medellín">Medellín</option>
+                            <option value="Cali">Cali</option>
+                            <option value="Barranquilla">Barranquilla</option>
+                            <option value="Cartagena">Cartagena</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="curso">Curso *</label>
+                        <select id="curso" class="form-control" required>
+                            <option value="">Selecciona un curso</option>
+                            <option value="JavaScript Avanzado">JavaScript Avanzado</option>
+                            <option value="React desde cero">React desde cero</option>
+                            <option value="Node.js con Express">Node.js con Express</option>
+                            <option value="Python para datos">Python para datos</option>
+                            <option value="CSS Moderno">CSS Moderno</option>
+                            <option value="SQL para devs">SQL para devs</option>
+                            <option value="Git & GitHub">Git & GitHub</option>
+                            <option value="TypeScript esencial">TypeScript esencial</option>
+                            <option value="Docker básico">Docker básico</option>
+                            <option value="Figma para devs">Figma para devs</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="progreso">Progreso (0-100) *</label>
+                        <input 
+                            type="number" 
+                            id="progreso" 
+                            class="form-control" 
+                            min="0" 
+                            max="100" 
+                            value="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="plan">Plan *</label>
+                        <select id="plan" class="form-control" required>
+                            <option value="">Selecciona un plan</option>
+                            <option value="básico">Básico ($29 USD)</option>
+                            <option value="estándar">Estándar ($59 USD)</option>
+                            <option value="premium">Premium ($99 USD)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input 
+                        type="checkbox" 
+                        id="activo" 
+                        checked
+                    >
+                    <label for="activo">Estudiante Activo</label>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btnCancelar" class="btn-secondary" onclick="document.querySelector('.modal').parentElement.querySelector('#btnCerrarModal').click()">Cancelar</button>
+                    <button type="button" id="btnGuardar" class="btn-primary">Guardar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="validacion.js"></script>
+    <script src="welcome.js"></script>
+
+</body>
+</html>
