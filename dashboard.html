@@ -1,1 +1,292 @@
-<!.-- -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | EduTrack - Tu Panel de Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="sidebar-logo">EduTrack</a>
+            <button class="sidebar-close" id="sidebarClose" aria-label="Cerrar sidebar">✕</button>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar">JQ</div>
+            <div class="user-info">
+                <h3 class="user-name">Jakelin Quino</h3>
+                <p class="user-role">Estudiante Premium</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="#courses" class="nav-item" data-section="courses">
+                <span class="nav-icon">📚</span>
+                <span class="nav-text">Mis Cursos</span>
+            </a>
+            <a href="#progress" class="nav-item" data-section="progress">
+                <span class="nav-icon">📈</span>
+                <span class="nav-text">Progreso</span>
+            </a>
+            <a href="#payments" class="nav-item" data-section="payments">
+                <span class="nav-icon">💳</span>
+                <span class="nav-text">Pagos</span>
+            </a>
+            <a href="#settings" class="nav-item" data-section="settings">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Configuración</span>
+            </a>
+        </nav>
+
+        <button class="logout-btn" id="logoutBtn">
+            <span class="nav-icon">🚪</span>
+            <span class="nav-text">Cerrar Sesión</span>
+        </button>
+    </aside>
+
+    <!-- OVERLAY (cierra sidebar en móvil) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="dashboard-header">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                ☰
+            </button>
+            <h1 class="page-title">Dashboard</h1>
+            <div class="header-actions">
+                <button class="notification-btn">🔔</button>
+            </div>
+        </header>
+
+        <!-- CONTENT CONTAINER -->
+        <div class="content-wrapper">
+
+            <!-- SECTION: DASHBOARD -->
+            <section id="dashboard" class="page-section active">
+                <div class="dashboard-grid">
+
+                    <!-- KPI CARDS -->
+                    <div class="kpi-cards">
+
+                        <!-- Card 1: Cursos Activos -->
+                        <article class="kpi-card">
+                            <div class="kpi-header">
+                                <h3 class="kpi-title">Cursos Activos</h3>
+                                <span class="kpi-icon">📚</span>
+                            </div>
+                            <div class="kpi-value">
+                                <span class="kpi-number">4</span>
+                                <span class="kpi-change positive">+2 este mes</span>
+                            </div>
+                            <div class="kpi-footer">
+                                <small>Progresando en tus rutas de aprendizaje</small>
+                            </div>
+                        </article>
+
+                        <!-- Card 2: Progreso Promedio -->
+                        <article class="kpi-card">
+                            <div class="kpi-header">
+                                <h3 class="kpi-title">Progreso Promedio</h3>
+                                <span class="kpi-icon">📈</span>
+                            </div>
+                            <div class="kpi-value">
+                                <span class="kpi-number">67%</span>
+                                <span class="kpi-change positive">+12% vs mes anterior</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 67%"></div>
+                            </div>
+                        </article>
+
+                        <!-- Card 3: Próximo Vencimiento -->
+                        <article class="kpi-card">
+                            <div class="kpi-header">
+                                <h3 class="kpi-title">Próximo Vencimiento</h3>
+                                <span class="kpi-icon">💳</span>
+                            </div>
+                            <div class="kpi-value">
+                                <span class="kpi-number">$99 USD</span>
+                                <span class="kpi-change">Vence en 15 días</span>
+                            </div>
+                            <div class="kpi-footer">
+                                <small>Plan Premium</small>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <!-- COURSES TABLE -->
+                    <div class="table-section">
+                        <div class="table-header">
+                            <h2 class="table-title">Mis Cursos</h2>
+                            <a href="#" class="btn-secondary">Ver Todos</a>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="courses-table">
+                                <thead>
+                                    <tr>
+                                        <th>Curso</th>
+                                        <th class="hide-mobile">Instructor</th>
+                                        <th>Progreso</th>
+                                        <th class="hide-mobile">Fecha Inicio</th>
+                                        <th class="hide-mobile">Precio</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-label="Curso">
+                                            <div class="course-info">
+                                                <span class="course-icon">⚛️</span>
+                                                <span>React desde cero</span>
+                                            </div>
+                                        </td>
+                                        <td data-label="Instructor" class="hide-mobile">Juan López</td>
+                                        <td data-label="Progreso">
+                                            <div class="progress-mini">
+                                                <div class="progress-fill" style="width: 78%"></div>
+                                            </div>
+                                            <span class="progress-text">78%</span>
+                                        </td>
+                                        <td data-label="Fecha Inicio" class="hide-mobile">2024-01-15</td>
+                                        <td data-label="Precio" class="hide-mobile">$59 USD</td>
+                                        <td data-label="Estado">
+                                            <span class="badge badge-blue">En progreso</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Curso">
+                                            <div class="course-info">
+                                                <span class="course-icon">🟨</span>
+                                                <span>JavaScript Avanzado</span>
+                                            </div>
+                                        </td>
+                                        <td data-label="Instructor" class="hide-mobile">María García</td>
+                                        <td data-label="Progreso">
+                                            <div class="progress-mini">
+                                                <div class="progress-fill" style="width: 100%"></div>
+                                            </div>
+                                            <span class="progress-text">100%</span>
+                                        </td>
+                                        <td data-label="Fecha Inicio" class="hide-mobile">2023-11-20</td>
+                                        <td data-label="Precio" class="hide-mobile">$99 USD</td>
+                                        <td data-label="Estado">
+                                            <span class="badge badge-green">Completado</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Curso">
+                                            <div class="course-info">
+                                                <span class="course-icon">🐍</span>
+                                                <span>Python para Datos</span>
+                                            </div>
+                                        </td>
+                                        <td data-label="Instructor" class="hide-mobile">Carlos Vega</td>
+                                        <td data-label="Progreso">
+                                            <div class="progress-mini">
+                                                <div class="progress-fill" style="width: 45%"></div>
+                                            </div>
+                                            <span class="progress-text">45%</span>
+                                        </td>
+                                        <td data-label="Fecha Inicio" class="hide-mobile">2024-03-10</td>
+                                        <td data-label="Precio" class="hide-mobile">$59 USD</td>
+                                        <td data-label="Estado">
+                                            <span class="badge badge-blue">En progreso</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Curso">
+                                            <div class="course-info">
+                                                <span class="course-icon">🐳</span>
+                                                <span>Docker Básico</span>
+                                            </div>
+                                        </td>
+                                        <td data-label="Instructor" class="hide-mobile">Luis Rodríguez</td>
+                                        <td data-label="Progreso">
+                                            <div class="progress-mini">
+                                                <div class="progress-fill" style="width: 30%"></div>
+                                            </div>
+                                            <span class="progress-text">30%</span>
+                                        </td>
+                                        <td data-label="Fecha Inicio" class="hide-mobile">2024-04-05</td>
+                                        <td data-label="Precio" class="hide-mobile">$29 USD</td>
+                                        <td data-label="Estado">
+                                            <span class="badge badge-yellow">Pausado</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="Curso">
+                                            <div class="course-info">
+                                                <span class="course-icon">📊</span>
+                                                <span>SQL para Devs</span>
+                                            </div>
+                                        </td>
+                                        <td data-label="Instructor" class="hide-mobile">Ana Martínez</td>
+                                        <td data-label="Progreso">
+                                            <div class="progress-mini">
+                                                <div class="progress-fill" style="width: 95%"></div>
+                                            </div>
+                                            <span class="progress-text">95%</span>
+                                        </td>
+                                        <td data-label="Fecha Inicio" class="hide-mobile">2024-02-01</td>
+                                        <td data-label="Precio" class="hide-mobile">$59 USD</td>
+                                        <td data-label="Estado">
+                                            <span class="badge badge-blue">En progreso</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- PLACEHOLDER SECTIONS -->
+            <section id="courses" class="page-section">
+                <h2>Mis Cursos</h2>
+                <p>Sección en construcción...</p>
+            </section>
+
+            <section id="progress" class="page-section">
+                <h2>Mi Progreso</h2>
+                <p>Sección en construcción...</p>
+            </section>
+
+            <section id="payments" class="page-section">
+                <h2>Mis Pagos</h2>
+                <p>Sección en construcción...</p>
+            </section>
+
+            <section id="settings" class="page-section">
+                <h2>Configuración</h2>
+                <p>Sección en construcción...</p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="dashboard-script.js"></script>
+    <script src="welcome.js"></script>
+
+</body>
+</html>
